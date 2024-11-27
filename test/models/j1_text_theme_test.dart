@@ -18,5 +18,45 @@ void main() {
 
       expect(testTextThemeRoboto, parsed);
     });
+
+    test("copies with header fonts", () {
+      final copied = testTextThemeRoboto.copyWithHeaderFont("family");
+
+      expect(copied.displayLarge.fontFamily, "family");
+      expect(copied.displayMedium.fontFamily, "family");
+      expect(copied.displaySmall.fontFamily, "family");
+      expect(copied.headlineLarge.fontFamily, "family");
+      expect(copied.headlineMedium.fontFamily, "family");
+      expect(copied.headlineSmall.fontFamily, "family");
+      expect(copied.titleLarge.fontFamily, "family");
+      expect(copied.titleMedium.fontFamily, "family");
+      expect(copied.titleSmall.fontFamily, "family");
+      expect(copied.bodyLarge.fontFamily, "roboto");
+      expect(copied.bodyMedium.fontFamily, "roboto");
+      expect(copied.bodySmall.fontFamily, "roboto");
+      expect(copied.labelLarge.fontFamily, "roboto");
+      expect(copied.labelMedium.fontFamily, "roboto");
+      expect(copied.labelSmall.fontFamily, "roboto");
+    });
+
+    test("copies with body fonts", () {
+      final copied = testTextThemeRoboto.copyWithBodyFont("family");
+
+      expect(copied.displayLarge.fontFamily, "roboto");
+      expect(copied.displayMedium.fontFamily, "roboto");
+      expect(copied.displaySmall.fontFamily, "roboto");
+      expect(copied.headlineLarge.fontFamily, "roboto");
+      expect(copied.headlineMedium.fontFamily, "roboto");
+      expect(copied.headlineSmall.fontFamily, "roboto");
+      expect(copied.titleLarge.fontFamily, "roboto");
+      expect(copied.titleMedium.fontFamily, "roboto");
+      expect(copied.titleSmall.fontFamily, "roboto");
+      expect(copied.bodyLarge.fontFamily, "family");
+      expect(copied.bodyMedium.fontFamily, "family");
+      expect(copied.bodySmall.fontFamily, "family");
+      expect(copied.labelLarge.fontFamily, "family");
+      expect(copied.labelMedium.fontFamily, "family");
+      expect(copied.labelSmall.fontFamily, "family");
+    });
   });
 }

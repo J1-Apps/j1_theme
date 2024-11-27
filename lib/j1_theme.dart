@@ -1,4 +1,4 @@
-library j1_theme;
+library;
 
 export "bloc/bloc.dart";
 export "models/models.dart";
