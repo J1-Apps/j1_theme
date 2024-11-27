@@ -76,7 +76,7 @@ class J1TextStyle with J1TextStyleMappable {
 
   const J1TextStyle.titleMedium({
     required this.fontFamily,
-    this.fontSize = 18,
+    this.fontSize = 16,
     this.height = 24,
     this.fontWeight = J1FontWeight.normal,
   });
@@ -169,4 +169,29 @@ class J1TextTheme with J1TextThemeMappable {
     required this.labelMedium,
     required this.labelSmall,
   });
+
+  J1TextTheme copyWithHeaderFont(String fontFamily) {
+    return copyWith(
+      displayLarge: displayLarge.copyWith(fontFamily: fontFamily),
+      displayMedium: displayMedium.copyWith(fontFamily: fontFamily),
+      displaySmall: displaySmall.copyWith(fontFamily: fontFamily),
+      headlineLarge: headlineLarge.copyWith(fontFamily: fontFamily),
+      headlineMedium: headlineMedium.copyWith(fontFamily: fontFamily),
+      headlineSmall: headlineSmall.copyWith(fontFamily: fontFamily),
+      titleLarge: titleLarge.copyWith(fontFamily: fontFamily),
+      titleMedium: titleMedium.copyWith(fontFamily: fontFamily),
+      titleSmall: titleSmall.copyWith(fontFamily: fontFamily),
+    );
+  }
+
+  J1TextTheme copyWithBodyFont(String fontFamily) {
+    return copyWith(
+      bodyLarge: bodyLarge.copyWith(fontFamily: fontFamily),
+      bodyMedium: bodyMedium.copyWith(fontFamily: fontFamily),
+      bodySmall: bodySmall.copyWith(fontFamily: fontFamily),
+      labelLarge: labelLarge.copyWith(fontFamily: fontFamily),
+      labelMedium: labelMedium.copyWith(fontFamily: fontFamily),
+      labelSmall: labelSmall.copyWith(fontFamily: fontFamily),
+    );
+  }
 }

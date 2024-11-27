@@ -21,11 +21,13 @@ class J1ThemeBloc extends Bloc<J1ThemeEvent, J1ThemeState> {
     J1PageTransition defaultPageTransition = J1PageTransition.cupertino,
   })  : _repository = repository ?? _locator.get<J1ThemeRepository>(),
         _onError = onError ?? _defaultOnError,
-        super(J1ThemeState(
-          colorScheme: defaultColorScheme,
-          textTheme: defaultTextTheme,
-          pageTransition: defaultPageTransition,
-        )) {
+        super(
+          J1ThemeState(
+            colorScheme: defaultColorScheme,
+            textTheme: defaultTextTheme,
+            pageTransition: defaultPageTransition,
+          ),
+        ) {
     on<UpdateColorSchemeEvent>(_onUpdateColorScheme);
     on<UpdateTextThemeEvent>(_onUpdateTextTheme);
     on<UpdatePageTransitionEvent>(_onUpdatePageTransition);
