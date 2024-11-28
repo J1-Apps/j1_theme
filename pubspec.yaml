@@ -1,6 +1,6 @@
 name: j1_theme
 description: "A common theme class and Flutter builders for the J1 apps."
-version: 1.0.1
+version: 1.0.2
 publish_to: none
 
 environment:
